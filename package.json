@@ -1,0 +1,24 @@
+{
+  "name": "forcelayout3d-web",
+  "version": "0.0.1",
+  "description": "A browser friendly wrapper of anvaka's ngraph.forcelayout3d module.",
+  "main": "index.js",
+  "homepage": "https://github.com/vasturiano/forcelayout3d-web",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vasturiano/forcelayout3d-web.git"
+  },
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && browserify index.js -o dist/forcelayout3d.js -s ngraph",
+    "minify": "uglifyjs dist/forcelayout3d.js -o dist/forcelayout3d.min.js -c -m",
+    "prepublish": "npm run build && npm run minify"
+  },
+  "dependencies": {
+    "ngraph.forcelayout3d": "~0.0.16",
+    "ngraph.graph": "~0.0.12"
+  },
+  "devDependencies": {
+    "browserify": "^13",
+    "uglify-js": "^2.7"
+  }
+}
